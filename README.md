@@ -4,9 +4,10 @@ On this repo i use Guzzle to make HTTP Client from laravel, so you possibly to c
 
 ## How to use
 
-**Clone Repo**
+**Clone repo**
 
-git clone https://github.com/rizalreza/laravel-httpclient.git
+	git clone https://github.com/rizalreza/laravel-httpclient.git
+
 
 **Install the composer dependencies**
 
