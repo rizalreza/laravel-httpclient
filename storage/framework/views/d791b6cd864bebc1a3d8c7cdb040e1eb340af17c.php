@@ -1,11 +1,10 @@
-@extends('layouts.app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 	<div class="container">
 		<div class="row center">
 			<div class="col-sm-6 col-sm-offset-3">
-			<form class="" action="{{ route('post.store') }}" method="post">
-				{{ csrf_field() }}
+			<form class="" action="<?php echo e(route('post.store')); ?>" method="post">
+				<?php echo e(csrf_field()); ?>
+
 				<div class="form-group">
 					<label for="">Nama</label>
 					<input type="text" class="form-control" name="nama">
@@ -44,4 +43,5 @@
 			</div>
 		</div>
 	</div>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="<?php echo e(app()->getLocale()); ?>">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title><?php echo e(config('app.name', 'Laravel')); ?></title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -28,8 +28,9 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                    <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
+                        <?php echo e(config('app.name', 'Laravel')); ?>
+
                     </a>
                 </div>
 
@@ -42,11 +43,11 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
-                        @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                        <?php if(auth()->guard()->guest()): ?>
+                            <li><a href="<?php echo e(route('login')); ?>">Login</a></li>
+                            <li><a href="<?php echo e(route('register')); ?>">Register</a></li>
                             
-                        @else
+                        <?php else: ?>
                          
 
                             <li class="dropdown">
@@ -56,8 +57,8 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="{{ route('post.create') }}">Add Pegawai</a>
-                                        <a href="{{ route('jabatan.create') }}">Add Jabatan</a>
+                                        <a href="<?php echo e(route('post.create')); ?>">Add Pegawai</a>
+                                        <a href="<?php echo e(route('jabatan.create')); ?>">Add Jabatan</a>
                                     </li>
                                 </ul>
                             </li>
@@ -70,46 +71,47 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="{{ route('post.index') }}">Index Pegawai</a>
-                                        <a href="{{ route('jabatan.index') }}">Index Jabatan</a>
-                                        <a href="{{ route('join.index') }}">Index Join</a>
+                                        <a href="<?php echo e(route('post.index')); ?>">Index Pegawai</a>
+                                        <a href="<?php echo e(route('jabatan.index')); ?>">Index Jabatan</a>
+                                        <a href="<?php echo e(route('join.index')); ?>">Index Join</a>
                                     </li>
                                 </ul>
                             </li>
 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    <?php echo e(Auth::user()->name); ?> <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="{{ route('logout') }}"
+                                        <a href="<?php echo e(route('logout')); ?>"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
+                                        <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                                            <?php echo e(csrf_field()); ?>
+
                                         </form>
                                     </li>
                                 </ul>
                             </li>
-                        @endguest
+                        <?php endif; ?>
                     </ul>
                 </div>
             </div>
         </nav>
         <div class="container">
           
-            @include('layouts.partials._alerts')
+            <?php echo $__env->make('layouts.partials._alerts', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
           
         </div>
-        @yield('content')
+        <?php echo $__env->yieldContent('content'); ?>
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="<?php echo e(asset('js/app.js')); ?>"></script>
 </body>
 </html>

@@ -25,3 +25,13 @@ Route::post('/post/create', 'PostController@store')->name('post.store');
 Route::get('/post/{id}/edit', 'PostController@edit')->name('post.edit');
 Route::put('/post/update/{id}', 'PostController@update')->name('post.update');;
 Route::delete('/post/{id}/delete', 'PostController@destroy')->name('post.destroy');
+
+Route::get('/jabatan', 'JabatanController@index')->name('jabatan.index');
+Route::get('/jabatan/create', 'JabatanController@create')->name('jabatan.create');
+Route::post('/jabatan/create', 'JabatanController@store')->name('jabatan.store');
+Route::get('/jabatan/{id}/edit', 'JabatanController@edit')->name('jabatan.edit');
+Route::put('/jabatan/update/{id}', 'JabatanController@update')->name('jabatan.update');;
+Route::delete('/jabatan/{id}/delete', 'JabatanController@destroy')->name('jabatan.destroy');
+
+
+Route::get('/join', 'JoinController@index')->name('join.index');

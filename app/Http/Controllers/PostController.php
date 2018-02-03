@@ -44,7 +44,8 @@ class PostController extends Controller
 	   	'nip' => $input['nip'],
 	   	'alamat' => $input['alamat'],
 	   	'hp' => $input['hp'],
-	   	'email' => $input['email']
+	   	'email' => $input['email'],
+	   	'jabatan_id' => $input['jabatan_id']
 	   	]
 	   	]);
 	   // return redirect ('post')->with('success', 'Post added !!');
@@ -73,9 +74,12 @@ class PostController extends Controller
 			'nip' => $input['nip'],
 			'alamat' => $input['alamat'],
 			'hp' => $input['hp'],
-			'email' => $input['email']
+			'email' => $input['email'],
+			'jabatan_id' => $input['jabatan_id']
 			]
 			]);
+
+
 
 		return redirect()->route('post.index')->with('info', 'Post edited !!');	
 	}

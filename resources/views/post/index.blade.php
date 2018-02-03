@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12">
         	
 
             <table class="table" >
@@ -13,18 +13,22 @@
                       <th><center>Nama</center></th>
                       <th><center>NIP</center></th>
                       <th><center>Alamat</center></th>
+                      <th><center>No HP</center></th>
                       <th><center>Email</center></th>
+                      <th><center>Jabatan Id</center></th>
                       <th colspan="2"><center>Action</center></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                      @foreach($content as $data)
-                      <td style="width:20%">{{ $data->nama }}</td>
+                      <td style="width:15%">{{ $data->nama }}</td>
                       <td style="width:15%">{{ $data->nip }}</td>
-                      <td style="width:25%">{{ $data->alamat }}</td>
+                      <td style="width:20%">{{ $data->alamat }}</td>
+                      <td style="width:10%">{{ $data->hp }}</td>
                       <td style="width:15%">{{ $data->email }}</td> 
-                      <td style="width:6%"><center>
+                      <td style="width:15%">{{ $data->jabatan_id }}</td> 
+                      <td style="width:5%"><center>
                        
                         <a href="{{URL('post/' . $data->id . '/edit') }}" class="btn btn-primary">Update</a>
 
