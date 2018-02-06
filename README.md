@@ -11,7 +11,7 @@ On this repo i use Guzzle to build HTTP Client with laravel, so you possibly to 
 
 **Install the composer dependencies**
 
-composer install
+	composer install
 
 **Install Guzzle**
 
@@ -20,7 +20,7 @@ You can get recomended way to install Guzzle through this [link](https://github.
 ## Note
 Make sure you use locally 8080 port when you serve **REST API** Application 
 
- php -S localhost:8080 -t public
+ 	php -S localhost:8080 -t public
 
 
 
