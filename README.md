@@ -1,6 +1,6 @@
 ## About 
 
-On this repo i use Guzzle to build HTTP Client with laravel, so you possibly to connect  and do CRUD to REST API. You can clone my REST API repo [here](https://github.com/rizalreza/lumen-RestApi.git)
+On this repo i use Guzzle to build HTTP Client with laravel, so you can connect and do CRUD to REST API. You can clone my REST API repo [here](https://github.com/rizalreza/lumen-RestApi.git)
 
 ## How to use
 
