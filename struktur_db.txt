@@ -1,4 +1,0 @@
-- User (Email, pass)
-- Category (id, name, slug)
-- Post (Id, category_id, title, content)
-- Coment (id, post_id, user_id, message)
